@@ -1,13 +1,6 @@
 <div align="center">
 
-# Aprenda **T**est **D**riven **D**evelopment (**TDD**) na prática
-
-Uma breve introdução a **T**est **D**riven **D**evelopment (**TDD**)
-em JavaScript para pessoas que querem escrever _**códigos mais confiáveis**_
-
-**_Deixe uma star ⭐ no repositório e um follow no [meu perfil](https://github.com/PauloGoncalvesBH), isso me incentiva a criar conteúdo de qualidade de software 100% gratuito_**
-
-</div>
+TUTORIAL CRIADO POR Paulo Gonçalves. Repositório original https://github.com/PauloGoncalvesBH/aprenda-tdd-na-pratica
 
 ## Sobre o tutorial
 
