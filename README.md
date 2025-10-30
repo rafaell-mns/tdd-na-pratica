@@ -2,6 +2,13 @@
 
 TUTORIAL CRIADO POR Paulo Gonçalves. Repositório original https://github.com/PauloGoncalvesBH/aprenda-tdd-na-pratica
 
+
+
+
+
+</div>
+
+
 ## Sobre o tutorial
 
 Esse tutorial irá te ajudar a dar os primeiros passos com **T**est **D**riven **D**evelopment (**TDD**) durante os próximos 30 minutos.
