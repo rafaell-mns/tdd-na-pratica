@@ -19,33 +19,29 @@
 
     function calcularTroco(precoDoProduto, valorPago, estoque) {
       let diferenca = valorPago - precoDoProduto
-      let troco = []
+      const troco = []
 
-      if (estoque) {
-        // se houver estoque limitado
-        for (let i = 0; i < cedulasDisponiveis.length; i++) {
-          const cedula = cedulasDisponiveis[i]
-          let qtdDisponivel = estoque[cedula] || 0
+      // usa o estoque fornecido ou cédulas padrão para estoque ilimitado
+      const cedulas = estoque 
+        ? Object.keys(estoque).map(Number).sort((a, b) => b - a)
+        : cedulasDisponiveis
 
-          while (diferenca >= cedula && qtdDisponivel > 0) {
-            troco.push(cedula)
-            diferenca -= cedula
-            qtdDisponivel--
-            estoque[cedula] = qtdDisponivel
-          }
+      for (const cedula of cedulas) {
+        const qtdDisponivel = estoque ? estoque[cedula] || 0 : Infinity
+        const qtdNecessaria = Math.floor(diferenca / cedula)
+        const qtdUsar = Math.min(qtdNecessaria, qtdDisponivel)
+
+        if (qtdUsar > 0) {
+          for (let i = 0; i < qtdUsar; i++) troco.push(cedula)
+          diferenca -= cedula * qtdUsar
+          if (estoque && estoque[cedula] !== undefined) estoque[cedula] -= qtdUsar
         }
-      } else {
-        // comportamento antigo
-        cedulasDisponiveis.forEach((cedula) => {
-          while (diferenca >= cedula) {
-            troco.push(cedula)
-            diferenca -= cedula
-          }
-        })
       }
 
       return troco
     }
+
+
   </script>
 
 
